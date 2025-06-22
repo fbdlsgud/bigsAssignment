@@ -1,0 +1,125 @@
+.boardContainer {
+  max-width: 1300px;
+  width: 100%;
+  margin: 60px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.row {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+}
+
+.header {
+  font-weight: 700;
+  background-color: #f5f7fa;
+  border-bottom: 2px solid #ccc;
+}
+
+.sortButton {
+  margin-bottom: 10px;
+  padding: 6px 14px;
+  background-color: #272a2c;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.sortButton:hover {
+  background-color: #63686b;
+}
+
+.row:hover:not(.header) {
+  background-color: #f9fbfd;
+}
+
+.cell {
+  flex: 1;
+  text-align: center;
+  color: #333;
+}
+
+.cell:nth-child(1) {
+  width: 10%;
+}
+
+.cell:nth-child(2) {
+  width: 45%;
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cell:nth-child(3) {
+  width: 20%;
+  color: #666;
+}
+.cell:nth-child(4) {
+  width: 25%;
+  text-align: right;
+  color: #999;
+  font-size: 14px;
+}
+
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: royalblue;
+  border-radius: 9px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background-color: #2a57c3;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.cell.notice{color: royalblue;}
+
+.cell.free{color: forestgreen;}
+
+.cell.qna{color: goldenrod;}
+
+.cell.etc{color: gray;}
+
+
+@media screen and (max-width: 786px) {
+
+.cell{font-size: 12px;}
+
+.sortButton {
+  margin-bottom: 7px;
+  padding: 3px 7px;
+  font-size: 10px;
+
+}
+
+.btn {
+    padding: 6px 16px;
+    font-size: 12px;  
+}
+}

@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+

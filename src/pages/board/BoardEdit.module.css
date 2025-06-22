@@ -1,0 +1,48 @@
+.editContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+}
+
+.editForm {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeUp 0.8s ease-out;
+}
+
+.image {
+  width: 100%;
+  max-height: 370px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 24px 0;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .editForm {
+    width: 90%;
+    padding: 15px;
+  }
+  .image {
+    max-height: 150px;
+  }
+}
