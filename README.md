@@ -21,15 +21,14 @@
 ```bash
 # 1. 프로젝트 설치
 npm install
-```
-# 2. .env 파일 생성
-    루트 경로에 아래와 같이 .env 파일을 생성해주세요. (.env.example 파일 참조)
-```bash
+
+# 2. .env 파일 생성 
+# 루트 경로에 아래와 같이 .env 파일을 생성해주세요. (.env.example 파일 참고)
+
 VITE_API_URL=https://front-mission.bigs.or.kr
-```
 
 # 3. 서버 실행 ( 포트 : 3000 )
-```bash
+
 npm run dev
 ```
 
