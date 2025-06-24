@@ -108,7 +108,7 @@ src/
     CORS 정책으로 인해 응답조차 받아올 수 없는 상황이 발생했습니다.
 
 
-  - 원인 및 해결 : 이를 해결하기 위해 테스트 API 서버(https://front-mission.bigs.or.kr)에서
+  - 원인 및 해결 : 이를 해결하기 위해 테스트 API 서버(https://front-mission.bigs.or.kr) 에서
     허용된 origin이 http://localhost:3000 만 등록되어 있는 것으로 판단하였고,
     이에 따라 Vite 개발 서버의 포트를 3000으로 직접 지정하여 문제를 해결했습니다.
 
