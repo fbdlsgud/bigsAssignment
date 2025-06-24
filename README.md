@@ -7,11 +7,11 @@
 ---
 
 ## 기술 스택
-- **React**
+- **React (Vite 기반)**
 - **React Router**
 - **Axios**
 - **Styled-components**
-- **CSS-module**
+- **CSS module**
 
 ---
 
@@ -20,37 +20,39 @@
 # 1. 프로젝트 설치
 npm install
 
-# 2. 서버 실행
+# 2. 서버 실행 ( 포트 : 3000 )
 npm run dev
 ```
-
+------
 
 ## 구현 기능
-- 회원
-    회원가입(유효성 검사 포함)
-    로그인 및 JWT 기반 인증
-    로그인 상태 유지 (Contest API 사용)
-    사용자 이름,이메일 표시 (jwt-decode 사용)
++ 회원
+  + 회원가입(유효성 검사 포함)
+  + 로그인 (JWT 발급 및 저장)
+  + 로그인 상태 유지 (Contest API 사용)
+  + 사용자 이름,이메일 표시 (jwt-decode 사용해 토큰 디코딩)
 
 - 게시판
-    글 작성 (카테고리, 이미지 첨부 가능)
-    글 목록 조회 (페이지네이션 처리, )
-    게시글 상세 보기
-    게시글 수정 (기존이미지 삭제 및 변경, 프리뷰이미지 설정)
-    게시글 삭제
+  + 글 작성 (카테고리, 이미지 첨부 가능)
+  + 글 목록 조회 (페이지네이션 처리, 정렬 기능 포함)
+  + 게시글 상세 보기
+  + 게시글 수정 (기존이미지 삭제 및 변경, 미리보기 처리)
+  + 게시글 삭제
 
 ---
 
-## 개발 중 트러블 슈팅
-- CORS 에러
-    개발 초기에는 Vite를 사용하였으며,
-Vite의 장점인 빠른 초기 빌드 속도와 핫 리로드로 인해 개발 중 빠른 피드백이 가능하다는 점에서 선택했습니다.
+## 기타 구현 참고 사항
+- 글 수정 시 기존 이미지 제거 시에는 빈 File을 생성하여 "empty.jpg"로 대체 처리
+- 최신 순 정렬을 위해 `?sort=createdAt,desc` Spring에서 기본 제공되는 쿼리를 활용하였습니다.
 
-하지만 회원가입 API 호출 시 401 Unauthorized 에러가 발생했고,
+## 개발 중 트러블 슈팅
++ CORS 에러
+  + 발단 : 개발 초기에는 Vite를 사용하였으며,
+Vite의 장점인 빠른 초기 빌드 속도와 핫 리로드로 인해 개발 중 빠른 피드백이 가능하다는 점에서 선택했습니다.
+  + 문제 : 하지만 회원가입 API 호출 시 401 Unauthorized 에러가 발생했고,
 에러 메시지의 상세 내용을 받아오기 위해 catch 블록에서 err.response.data.username 값을 확인하려 했지만,
 CORS 정책으로 인해 응답조차 받아올 수 없는 상황이 발생했습니다.
-
-이를 해결하기 위해 테스트 API 서버(https://front-mission.bigs.or.kr)의 CORS 정책을 확인해본 결과,
+  + 원인 및 해결 : 이를 해결하기 위해 테스트 API 서버(https://front-mission.bigs.or.kr)에서
 허용된 origin이 http://localhost:3000만 등록되어 있는 것으로 판단하였고,
 이에 따라 Vite 개발 서버의 포트를 3000으로 직접 지정하여 문제를 해결했습니다.
 
@@ -59,22 +61,21 @@ CORS 정책으로 인해 응답조차 받아올 수 없는 상황이 발생했�
 
 
 
-## 다운 받은거
+## 설치한 주요 라이브러리
 
-npm create vite@latest
+```bash
+npm create vite@latest #vite 기반 React 프로젝트 생성
 
-npm install styled-components
+npm install styled-components # 스타일 컴포넌트
 
-npm install react-router-dom
+npm install react-router-dom # 라우팅
 
-npm install axios  
+npm install axios # API 호출
 
-npm install jwt-decode
+npm install jwt-decode # JWT 디코딩용
 
-npm install react-spinners --save
-
-
-
+npm install react-spinners --save # 로딩 스피너
+```
 
 
-💡 개발 환경 및 CORS 이슈 해결 과정
+
