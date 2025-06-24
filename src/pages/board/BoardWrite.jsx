@@ -13,13 +13,15 @@ export default function BoardWrite() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState(null);
   const [categoryOpt, setCategoryOpt] = useState([]);
 
   const [previewImg, setPreviewImg] = useState("");
 
   const navigate = useNavigate();
 
+
+  // 카테고리 옵션 불러오기
   useEffect(() => {
     const getCategories = async () => {
       try {
@@ -36,6 +38,7 @@ export default function BoardWrite() {
     getCategories();
   }, []);
 
+  // 글 작성 제출 핸들러
   const onSubmit = async (e) => {
     e.preventDefault();
 

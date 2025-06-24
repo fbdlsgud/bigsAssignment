@@ -15,6 +15,10 @@
   text-decoration: none;
 }
 
+.topBtnGrb{
+  display: flex;
+  justify-content: space-between;
+}
 .header {
   font-weight: 700;
   background-color: #f5f7fa;
@@ -32,8 +36,23 @@
   transition: background-color 0.2s;
 }
 
+.writeButton {
+  margin-bottom: 10px;
+  padding: 6px 14px;
+  background-color: #3ca0e4;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
 .sortButton:hover {
   background-color: #63686b;
+}
+
+.writeButton:hover {
+  background-color: #3989bb;
 }
 
 .row:hover:not(.header) {
@@ -98,6 +117,12 @@
 }
 
 
+.empty {
+  text-align: center;
+  margin: 60px 0;
+  color: #888;
+}
+
 .cell.notice{color: royalblue;}
 
 .cell.free{color: forestgreen;}
@@ -115,7 +140,12 @@
   margin-bottom: 7px;
   padding: 3px 7px;
   font-size: 10px;
+}
 
+.writeButton {
+  margin-bottom: 7px;
+  padding: 3px 7px;
+  font-size: 10px;
 }
 
 .btn {

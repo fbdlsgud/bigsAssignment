@@ -15,6 +15,7 @@ export default function SignIn() {
 
   const { login } = useAuth();
 
+  // 로그인 핸들러
   const signInHandler = async (e) => {
     e.preventDefault();
 
@@ -24,18 +25,18 @@ export default function SignIn() {
       const accessToken = res.data.accessToken;
       const refreshToken = res.data.refreshToken;
 
-      login(accessToken,refreshToken);
+      login(accessToken,refreshToken); // 토큰 저장 (AuthContext)
 
       alert("로그인 성공");
 
       navigate("/boards");
     } catch (err) {
-      if (err.response?.status === 400) {
+      if (err.response?.status === 400) { // 400에러 일 경우 : 서버에서 보낸 에러 메시지 출력
         const errMsg =
           err.response?.data?.message ||
           "로그인에 실패하였습니다. 다시 시도해주세요";
         alert(errMsg);
-      } else {
+      } else { // 그 외의 에러 상항
         alert("예상치 못한 오류가 발생했습니다. 관리자에게 문의해주세요.");
         console.log(err);
       }

@@ -3,6 +3,9 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 120px);
+    max-width: 900px;
+  margin: 60px auto;
+  padding: 32px;
 }
 
 .editForm {
@@ -17,7 +20,7 @@
 
 .image {
   width: 100%;
-  max-height: 370px;
+  max-height: 200px;
   object-fit: contain;
   border-radius: 10px;
   margin: 24px 0;
@@ -45,4 +48,26 @@
   .image {
     max-height: 150px;
   }
+}
+.imagePreview {
+  position: relative;
+  display: inline-block;
+}
+
+.imagePreview img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 50%;
 }

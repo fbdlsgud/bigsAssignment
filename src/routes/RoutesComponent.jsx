@@ -6,12 +6,12 @@ import { useAuth } from "../context/AuthContext";
 import BoardWrite from "../pages/board/BoardWrite";
 import BoardDetail from "../pages/board/BoardDetail";
 import BoardEdit from "../pages/board/BoardEdit";
-import { PacmanLoader } from "react-spinners";
+import Loading from "../components/common/Loading";
 
 export default function RoutesComponent() {
   const { isLogin, authLoading } = useAuth();
 
-    if(authLoading) return <PacmanLoader />;
+    if(authLoading) return <Loading />;
 
   return (
     <Routes>

@@ -1,9 +1,29 @@
-#vite 사용
+# BIGS 게시판 Frontend 과제전형
+
+안녕하세요.
+이 프로젝트는 BIGS의 프론트엔드 개발자 과제 전형으로 제작한 게시판 웹 사이트입니다.
+제공된 API 문서를 활용하여 **회원가입 / 로그인 / 게시글 CRUD 기능을 구현하였습니다.
+
+
+## 기술 스택
+- **React**
+- **React Router**
+- **Axios**
+- **Styled-components**
+- **CSS-module**
+
+## 프로젝트 실행 방밥
+```bash
+# 1. 프로젝트 설치
+npm install
+
+# 2. 서버 실행
 npm run dev
+```
 
-#axios 사용
 
-
+## 구현 기능
+- 
 
 
 
@@ -21,6 +41,8 @@ npm install react-router-dom
 npm install axios  
 
 npm install jwt-decode
+
+npm install react-spinners --save
 
 
 

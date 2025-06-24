@@ -1,5 +1,5 @@
 
-
+// 날짜 & 시간을 헌국어 형식으로 포맷
 export const formatDateTime = (time) => {
     if(!time) return;
 

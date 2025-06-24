@@ -13,14 +13,18 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // 각 필드별 에러메세지
   const [errorMsg, setErrorMsg] = useState({});
 
   const navigate = useNavigate();
 
+  // 이메일 & 비밀번호 정규식
   const usernameRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex =
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!%*#?&])[A-Za-z\d!%*#?&]{8,}$/;
 
+
+  // 각 필드별 유효성 검사 함수 start
   const validatedUsername = (username) => {
     if (!username) return "이메일을 입력해주세요.";
     if (!usernameRegex.test(username)) return "이메일 형식이 아닙니다.";
@@ -44,11 +48,14 @@ export default function SignUp() {
     if (password !== confirmPassword) return "비밀번호가 일치하지 않습니다.";
     return null;
   };
+  // 각 필드별 유효성 검사 함수 end
 
 
+  // 회원가입 요청 핸들러
   const signUpHandler = async (e) => {
     e.preventDefault();
 
+    // 전체 유효성 검사
     const totalValidate = {
       username: validatedUsername(username),
       name: validatedName(name),
@@ -56,6 +63,7 @@ export default function SignUp() {
       confirmPassword: validatedConfirmPassword(confirmPassword),
     };
 
+    // 하나라도 에러메세지 존재하면 에러메세지 세팅 후 종료
     if(Object.values(totalValidate).some(value => value !== null)) {
       setErrorMsg(totalValidate);
       alert("입력한 내용을 다시 확인해주세요.");
@@ -77,9 +85,9 @@ export default function SignUp() {
         navigate("/signin");
       }, 300);
     } catch (err) {
-      if (err.response.status === 400) {
+      if (err.response.status === 400) { // 400에러 일 경우 : 서버에서 보낸 에러 메시지 출력
         setErrorMsg(err.response.data);
-      } else {
+      } else { // 그 외의 에러 상항
         alert("예상치 못한 오류가 발생했습니다. 관리자에게 문의해주세요.");
       }
     }
