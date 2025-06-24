@@ -36,6 +36,10 @@ npm run dev
 
 ---
 
+## 🗂️폴더 구조
+<pre><code>📁 src ┣ 📁 api # Axios 인스턴스 및 API 함수 정의 ┣ 📁 components # 공통 UI 컴포넌트들 ┣ 📁 context # 인증 및 로그인 상태 관리 ┣ 📁 pages # 회원가입, 로그인, 게시판 등 주요 페이지 ┣ 📁 utils # 날짜 포맷 등 유틸 함수 ┣ 📄 App.jsx ┣ 📄 main.jsx </code></pre>
+
+
 ## 🔖구현 기능
 
 - 회원
@@ -53,6 +57,9 @@ npm run dev
 
 ---
 
+
+
+
 ## 🔖기타 구현 참고 사항
 
 - 글 수정 중 이미지 삭제 처리
@@ -63,17 +70,29 @@ npm run dev
 - 정렬 기능
   - 게시글 목록을 최신순으로 정렬할 때는 Spring에서 기본 제공하는 정렬 쿼리 `?sort=createdAt,desc` 를 활용하였습니다.
 
+
+
+
 ## 💫개발 중 트러블 슈팅
 
 - CORS 에러
+
+
   - 발단 : 개발 초기에는 Vite를 사용하였으며,
     Vite의 장점인 빠른 초기 빌드 속도와 핫 리로드로 인해 개발 중 빠른 피드백이 가능하다는 점에서 선택했습니다.
+
+
   - 문제 : 하지만 회원가입 API 호출 시 401 Unauthorized 에러가 발생했고,
     에러 메시지의 상세 내용을 받아오기 위해 catch 블록에서 err.response.data.username 값을 확인하려 했지만,
     CORS 정책으로 인해 응답조차 받아올 수 없는 상황이 발생했습니다.
+
+
   - 원인 및 해결 : 이를 해결하기 위해 테스트 API 서버(https://front-mission.bigs.or.kr)에서
     허용된 origin이 http://localhost:3000만 등록되어 있는 것으로 판단하였고,
     이에 따라 Vite 개발 서버의 포트를 3000으로 직접 지정하여 문제를 해결했습니다.
+
+
+
 
 ## 💻 설치한 주요 라이브러리
 
