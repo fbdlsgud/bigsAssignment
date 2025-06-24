@@ -39,12 +39,13 @@ npm run dev
 ## 🗂️폴더 구조
 <pre><code>
 src/
-├── api/              # Axios 인스턴스 및 API 함수 정의
-├── assets/           # 이미지, 아이콘 등 정적 리소스
-├── components/       # 공통 UI 컴포넌트들 (Button, Input 등)
-├── context/          # 전역 상태관리 (AuthContext 등)
+├── api/              # Axios 인스턴스 
+├── components/       # 공통 및 페이지 별 UI 컴포넌트들 (Button, Input 등)
+├── context/          # 전역 상태관리 (AuthContext)
+├── layout/          # 전체 레이아웃 컴포넌트(Header / Footer 포함)
 ├── pages/            # 라우팅되는 주요 페이지 컴포넌트
-├── utils/            # 날짜 포맷 등 유틸 함수
+├── routes/            # 라우팅 처리 컴포넌트
+├── utils/            # 날짜 포맷 유틸 함수
 ├── App.jsx
 └── main.jsx
 </code></pre>
